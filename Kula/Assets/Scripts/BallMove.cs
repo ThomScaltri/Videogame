@@ -7,7 +7,7 @@ using UnityEditor.Animations;
 
 public class BallMove : MonoBehaviour
 {
-    public float Speed = 5f;
+    public float Speed = 1f;
     public float JumpHeight = 1f;
     public float SpeedRotate = 1f;
 

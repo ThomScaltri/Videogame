@@ -9,7 +9,7 @@ public class RespawnBall : MonoBehaviour
     //Detect collisions between the GameObjects with Colliders attached
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.tag == "Player")
         {
             other.transform.position = RespawnPoint.position;
             other.transform.rotation = Quaternion.identity;
