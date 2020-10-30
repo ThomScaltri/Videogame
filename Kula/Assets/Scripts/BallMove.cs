@@ -38,35 +38,40 @@ public class BallMove : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
 
         float rotationY = 0;
+        _translation = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            _translation = transform.forward * moveZ;
+        }
 
         if (_mouseMode)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            rotationY += Input.GetAxis("Mouse X") * MouseSensitivity;
         }
         else
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
-                rotationY -= 1;
+                rotationY += 10;
             }
-            else if (Input.GetKey(KeyCode.E))
+            else if (Input.GetKey(KeyCode.LeftArrow))
             {
-                rotationY += 1;
+                rotationY -= 10;
             }
         }
-
-        _translation = Vector3.zero;
+        /*
         _translation += transform.forward * moveZ;
         _translation += transform.right * moveX;
+        */
         _rotation = Vector3.up * rotationY;
 
         // Uncomment below to change player direction based on where it is going
         // if (_inputs != Vector3.zero)
-        //     transform.forward = _inputs;
+        // transform.forward = _inputs;
 
         if (Input.GetButtonDown("Jump") && _isGrounded)
         {
