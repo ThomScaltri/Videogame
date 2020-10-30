@@ -38,6 +38,8 @@ public class BallMove : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
 
         float rotationY = 0;
+
+
         _translation = Vector3.zero;
 
         if (Input.GetKey(KeyCode.UpArrow))
