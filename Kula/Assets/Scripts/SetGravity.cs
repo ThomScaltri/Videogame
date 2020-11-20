@@ -5,7 +5,7 @@ using UnityEngine;
 public class SetGravity : MonoBehaviour
 {
     Rigidbody body;
-    CameraBehaviour cam;
+    public CameraBehaviour cam;
 
     private bool isTouched = true;
     private float distance = 0;
@@ -25,24 +25,19 @@ public class SetGravity : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         Debug.Log("Ciao sono dentro");
-        if (col.tag == "WallZ")
+        
+        if (col.gameObject.tag == "WallZ")
         {
-
             Physics.gravity = new Vector3(0, 0, 9.81f);
+            cam.setRotation(new Vector3(-90,0,0));
 
-            /*rotateValue = new Vector3(90, 0, 0);
-            targetRotation = transform.position + rotateValue;
-            rotation = Quaternion.Euler(0, 0, 90);
-            transform.localPosition = cam.thirdPersonPOV.localPosition;
-            transform.localRotation = rotation;*/
-
-            //.transform.Rotate(new Vector3(90,0,0));
 
             //cam.setRotation();
         }
-        else if (col.tag == "WallX")
+        else if (col.gameObject.tag == "WallX")
         {
             Physics.gravity = new Vector3(9.81f, 0, 0);
+            
         }
         else if (col.gameObject.tag == "Wall-Z")
         {
@@ -51,6 +46,7 @@ public class SetGravity : MonoBehaviour
         else if (col.gameObject.tag == "Wall-X")
         {
             Physics.gravity = new Vector3(-9.81f, 0, 0);
+            cam.setRotation(new Vector3(-90, 0, 0));
         }
         else if (col.gameObject.tag == "WallY")
         {
@@ -74,32 +70,6 @@ public class SetGravity : MonoBehaviour
 
     void Update()
     {
-        // check if ground below character is present
-        /*isTouched = Physics.CheckSphere(distanceChecker.position, WallDistance, Wall, QueryTriggerInteraction.Ignore);
-        
-
-        if (isTouched &&  gameObject.tag== "Player")
-        {
-            Physics.gravity = new Vector3(0, 0, 9.81f);
-            rotateValue = new Vector3(0, 0, 90);
-            targetRotation = transform.position + rotateValue;
-            rotation = Quaternion.Euler(0, 0, 90);
-            transform.localPosition = cam.thirdPersonPOV.localPosition;
-            transform.localRotation = rotation;
-
-        }
-
-        if (isTouched)
-        {
-            Physics.gravity = new Vector3(9.81f, 0,0);
-        }
-        if (isTouched && gameObject.tag == "Player")
-        {
-            Physics.gravity = new Vector3(0, 0,-9.81f);
-        }
-        if (isTouched && gameObject.tag == "Player")
-        {
-            Physics.gravity = new Vector3(-9.81f, 0,0);
-        }*/
+       
     }
 }

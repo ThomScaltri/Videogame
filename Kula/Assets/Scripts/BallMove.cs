@@ -37,6 +37,8 @@ public class BallMove : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
+
+
         float rotationY = 0;
 
 

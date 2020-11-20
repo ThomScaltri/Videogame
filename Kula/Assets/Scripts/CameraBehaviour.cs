@@ -61,23 +61,16 @@ public class CameraBehaviour : MonoBehaviour
             }
             else
             {
-                if (tempRotation)
-                {
-                    Debug.Log("Ciao sono gay");
-                    thirdPersonPOV.transform.Rotate(new Vector3(90, 0, 0));
-                }
-                else
-                {
-                    transform.localPosition = thirdPersonPOV.localPosition;
-                    transform.localRotation = thirdPersonPOV.localRotation;
-                }
+                transform.localPosition = thirdPersonPOV.localPosition;
+                transform.localRotation = thirdPersonPOV.localRotation;
+            
             }
         }
     }
 
-    public void setRotation()
+    public void setRotation(Vector3 v)
     {
-        tempRotation = true;
+        transform.Rotate(v);
     }
     
 }
