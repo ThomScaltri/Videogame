@@ -7,13 +7,9 @@ public class CameraBehaviour : MonoBehaviour
     public bool isFirstPerson = false;
     public Transform firstPersonPOV;
     public Transform thirdPersonPOV;
+    public bool tempRotation = false;
 
     public Vector3 initialPositionOffset;
-
-
-    private Vector3 targetRotation;
-    private Vector3 rotateValue;
-    private Quaternion rotation;
 
     void Awake()
     {
@@ -65,20 +61,23 @@ public class CameraBehaviour : MonoBehaviour
             }
             else
             {
-                transform.localPosition = thirdPersonPOV.localPosition;
-                transform.localRotation = thirdPersonPOV.localRotation;
+                if (tempRotation)
+                {
+                    Debug.Log("Ciao sono gay");
+                    thirdPersonPOV.transform.Rotate(new Vector3(90, 0, 0));
+                }
+                else
+                {
+                    transform.localPosition = thirdPersonPOV.localPosition;
+                    transform.localRotation = thirdPersonPOV.localRotation;
+                }
             }
         }
     }
 
-
-    public void camRotation()
+    public void setRotation()
     {
-        //transform.localRotation = thirdPersonPOV.localRotation + new Vector3(90,0,0);
-        rotateValue = new Vector3(90, 0, 0);
-        targetRotation = transform.position + rotateValue;
-        rotation = Quaternion.Euler(90, 0, 0);
-        transform.localPosition = thirdPersonPOV.localPosition;
-        transform.localRotation = rotation;
+        tempRotation = true;
     }
+    
 }

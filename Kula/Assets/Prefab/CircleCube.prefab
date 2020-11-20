@@ -963,8 +963,8 @@ GameObject:
   - component: {fileID: 8010820732941944873}
   - component: {fileID: 8010820732941944874}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: CircleCube
+  m_TagString: WallZ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

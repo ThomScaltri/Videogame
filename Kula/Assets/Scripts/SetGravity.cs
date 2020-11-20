@@ -25,7 +25,7 @@ public class SetGravity : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         Debug.Log("Ciao sono dentro");
-        if (col.gameObject.tag=="Player")
+        if (col.tag == "WallZ")
         {
 
             Physics.gravity = new Vector3(0, 0, 9.81f);
@@ -37,8 +37,28 @@ public class SetGravity : MonoBehaviour
             transform.localRotation = rotation;*/
 
             //.transform.Rotate(new Vector3(90,0,0));
-            cam.camRotation();
 
+            //cam.setRotation();
+        }
+        else if (col.tag == "WallX")
+        {
+            Physics.gravity = new Vector3(9.81f, 0, 0);
+        }
+        else if (col.gameObject.tag == "Wall-Z")
+        {
+            Physics.gravity = new Vector3(0, 0, -9.81f);
+        }
+        else if (col.gameObject.tag == "Wall-X")
+        {
+            Physics.gravity = new Vector3(-9.81f, 0, 0);
+        }
+        else if (col.gameObject.tag == "WallY")
+        {
+            Physics.gravity = new Vector3(0, 9.81f, 0);
+        }
+        else if (col.gameObject.tag == "Wall-Y")
+        {
+            Physics.gravity = new Vector3(0, -9.81f, 0);
         }
     }
 

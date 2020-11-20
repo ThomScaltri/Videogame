@@ -7,6 +7,10 @@ TagManager:
   - Wall
   - WallZ
   - WallX
+  - WallY
+  - Wall-Z
+  - Wall-X
+  - Wall-Y
   layers:
   - Default
   - TransparentFX
