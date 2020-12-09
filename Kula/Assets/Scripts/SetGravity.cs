@@ -7,6 +7,10 @@ public class SetGravity : MonoBehaviour
     Rigidbody body;
     public CameraBehaviour cam;
 
+    public Transform orbit;
+
+
+
     private bool isTouched = true;
     private float distance = 0;
     public Transform distanceChecker;
@@ -17,6 +21,12 @@ public class SetGravity : MonoBehaviour
     private Vector3 rotateValue;
     private Quaternion rotation;
 
+    enum State {
+        WallX,WallZ,WallmZ,WallmX
+        
+    }
+
+    State s;
     /*void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -26,11 +36,12 @@ public class SetGravity : MonoBehaviour
     {
         Debug.Log("Ciao sono dentro");
         
-        if (col.gameObject.tag == "WallZ")
+        if (col.gameObject.tag == "WallZ" && s!=State.WallZ)
         {
             Physics.gravity = new Vector3(0, 0, 9.81f);
-            cam.setRotation(new Vector3(-90,0,0));
-
+            //cam.setRotation(new Vector3(-90,0,0));
+            transform.localEulerAngles=new Vector3(-90, 0, 0);
+            s = State.WallZ;
 
             //cam.setRotation();
         }

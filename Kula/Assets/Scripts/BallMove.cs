@@ -79,7 +79,7 @@ public class BallMove : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && _isGrounded)
         {
-            _body.AddForce(Vector3.up * Mathf.Sqrt(JumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+            _body.AddForce(transform.up * Mathf.Sqrt(JumpHeight * -2f * -9.81f), ForceMode.VelocityChange);
         }
     }
 

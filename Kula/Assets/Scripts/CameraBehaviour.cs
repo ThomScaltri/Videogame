@@ -43,34 +43,40 @@ public class CameraBehaviour : MonoBehaviour
     {
         if (isFirstPerson)
         {
-            if (firstPersonPOV == null)
+            transform.SetParent(firstPersonPOV,false);
+            /*if (firstPersonPOV == null)
             {
-                transform.localPosition = Vector3.zero;
+                //transform.localPosition = Vector3.zero;
+                
             }
             else
             {
-                transform.localPosition = firstPersonPOV.localPosition;
-                transform.localRotation = firstPersonPOV.localRotation;
-            }
+                
+                //transform.localPosition = firstPersonPOV.localPosition;
+                //transform.localRotation = firstPersonPOV.localRotation;
+            }*/
         }
         else
         {
-            if (thirdPersonPOV == null)
+            transform.SetParent(thirdPersonPOV,false);
+
+            /*if (thirdPersonPOV == null)
             {
-                transform.localPosition = initialPositionOffset;
+                //transform.localPosition = initialPositionOffset;
             }
             else
             {
-                transform.localPosition = thirdPersonPOV.localPosition;
-                transform.localRotation = thirdPersonPOV.localRotation;
+                //transform.localPosition = thirdPersonPOV.localPosition;
+                //transform.localRotation = thirdPersonPOV.localRotation;
             
-            }
+            }*/
         }
     }
 
     public void setRotation(Vector3 v)
     {
-        transform.Rotate(v);
+        transform.localEulerAngles = v;
+        //transform.Rotate(v);
     }
     
 }
