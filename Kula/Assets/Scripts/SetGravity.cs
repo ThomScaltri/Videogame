@@ -39,11 +39,18 @@ public class SetGravity : MonoBehaviour
         if (col.gameObject.tag == "WallZ" && s!=State.WallZ)
         {
             Physics.gravity = new Vector3(0, 0, 9.81f);
+<<<<<<< HEAD
             //cam.setRotation(new Vector3(-90,0,0));
             transform.localEulerAngles=new Vector3(-90, 0, 0);
             s = State.WallZ;
 
             //cam.setRotation();
+=======
+            cam.setRotation(new Vector3(-90,0,0));
+
+
+            //cam.setRotation();
+>>>>>>> dev
         }
         else if (col.gameObject.tag == "WallX")
         {

@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &653471877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7148186696086274991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f535220940b084fa99d081237c8da9c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceChecker: {fileID: 0}
-  WallDistance: 0.1
-  Wall:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &2099376729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f535220940b084fa99d081237c8da9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   distanceChecker: {fileID: 0}
   WallDistance: 0.1
   Wall:
@@ -46,6 +30,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f535220940b084fa99d081237c8da9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  distanceChecker: {fileID: 0}
+  WallDistance: 0.1
+  Wall:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &653471877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148186696086274991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f535220940b084fa99d081237c8da9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   distanceChecker: {fileID: 0}
   WallDistance: 0.1
   Wall:
@@ -63,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f535220940b084fa99d081237c8da9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   distanceChecker: {fileID: 0}
   WallDistance: 0.1
   Wall:
@@ -177,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8010820732941944855, guid: 6ce9476eaa52242519f585fde6fe5077, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8010820732941944855, guid: 6ce9476eaa52242519f585fde6fe5077, type: 3}
       propertyPath: m_LocalRotation.x
@@ -233,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8010820732941944875, guid: 6ce9476eaa52242519f585fde6fe5077, type: 3}
       propertyPath: m_Name
-      value: TrasparentCube
+      value: TrasparentCube Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8010820732941944875, guid: 6ce9476eaa52242519f585fde6fe5077, type: 3}
       propertyPath: m_Layer
