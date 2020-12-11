@@ -9,19 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6785679699875562763, guid: 80b41eaaeedef41acbb9720632eeb452, type: 3}
       propertyPath: m_Name
-      value: CubeLong4Transparent
+      value: CubeLong4Transparent Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8840832366708371720, guid: 80b41eaaeedef41acbb9720632eeb452, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.293
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8840832366708371720, guid: 80b41eaaeedef41acbb9720632eeb452, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8840832366708371720, guid: 80b41eaaeedef41acbb9720632eeb452, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.774
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8840832366708371720, guid: 80b41eaaeedef41acbb9720632eeb452, type: 3}
       propertyPath: m_LocalRotation.x
