@@ -10,7 +10,6 @@ public class SetGravity : MonoBehaviour
     public Transform orbit;
 
 
-
     private bool isTouched = true;
     private float distance = 0;
     public Transform distanceChecker;
@@ -22,62 +21,107 @@ public class SetGravity : MonoBehaviour
     private Quaternion rotation;
 
     enum State {
-        WallX,WallZ,WallmZ,WallmX
+        WallX, WallmX, WallZ,WallmZ,WallY,WallmY
         
     }
 
-    State s;
-    /*void Start()
-    {
-        body = GetComponent<Rigidbody>();
-    }*/
+    State s=State.WallmY;
+    State prec = State.WallmY;
 
     void OnTriggerEnter(Collider col)
     {
         Debug.Log("Ciao sono dentro");
-        
+
+        //OK
         if (col.gameObject.tag == "WallZ" && s!=State.WallZ)
         {
             Physics.gravity = new Vector3(0, 0, 9.81f);
-            //cam.setRotation(new Vector3(-90,0,0));
-            transform.localEulerAngles=new Vector3(-90, 0, 0);
-            s = State.WallZ;
-
-            //cam.setRotation();
-        }
-        else if (col.gameObject.tag == "WallX")
-        {
-            Physics.gravity = new Vector3(9.81f, 0, 0);
+            if(prec==State.WallmY)
+                transform.localEulerAngles=new Vector3(-90, 0, 0);
+            else if(prec==State.WallmX)
+                transform.localEulerAngles = new Vector3(0, 90, -90);
+            else if(prec==State.WallX)
+                transform.localEulerAngles = new Vector3(180, 90, -90);
             
+
+            s = State.WallZ;
+            prec = State.WallZ;
         }
-        else if (col.gameObject.tag == "Wall-Z")
-        {
-            Physics.gravity = new Vector3(0, 0, -9.81f);
-        }
-        else if (col.gameObject.tag == "Wall-X")
-        {
-            Physics.gravity = new Vector3(-9.81f, 0, 0);
-            cam.setRotation(new Vector3(-90, 0, 0));
-        }
-        else if (col.gameObject.tag == "WallY")
-        {
-            Physics.gravity = new Vector3(0, 9.81f, 0);
-        }
-        else if (col.gameObject.tag == "Wall-Y")
+
+        else if (col.gameObject.tag == "Wall-Y" && s != State.WallmY)
         {
             Physics.gravity = new Vector3(0, -9.81f, 0);
-        }
-    }
+            if(prec==State.WallZ)
+                transform.localEulerAngles = new Vector3(0, 180, 0);
+            else if(prec==State.WallmX)
+                transform.localEulerAngles = new Vector3(0, 90, 0);
+            else if(prec==State.WallX)
+                transform.localEulerAngles = new Vector3(0, -90, 0);
+            else if(prec==State.WallmZ)
+                transform.localEulerAngles = new Vector3(0, 0, 0);
 
-    /*void OnCollisionEnter(Collision col)
-    {
-        Debug.Log("Ciao sono dentro");
-        if (col.gameObject.tag == "Player")
+            s = State.WallmY;
+            prec = State.WallmY;
+        }
+
+
+
+        else if (col.gameObject.tag == "Wall-Z" && s != State.WallmZ)
         {
+            Physics.gravity = new Vector3(0, 0, -9.81f);
+            if(prec==State.WallmY)
+                transform.localEulerAngles = new Vector3(-90, 90, 90);
+            else if(prec==State.WallmX)
+                transform.localEulerAngles = new Vector3(0, 90, 90);
+            else if(prec==State.WallX)
+                transform.localEulerAngles = new Vector3(180, 90, 90);
 
-            Physics.gravity = new Vector3(0, 0, 9.81f);
+
+            s = State.WallmZ;
+            prec = State.WallmZ;
         }
-    }*/
+
+        else if (col.gameObject.tag == "WallX" && s != State.WallX)
+        {
+            Physics.gravity = new Vector3(9.81f, 0, 0);
+            if(prec==State.WallmY)
+                transform.localEulerAngles = new Vector3(-90, 0, 90);
+            else if(prec==State.WallZ)
+                transform.localEulerAngles = new Vector3(-180, 0, 90);
+            else if(prec==State.WallmZ)
+                transform.localEulerAngles = new Vector3(0, 0, 90);
+
+            s = State.WallX;
+            prec = State.WallX;
+
+        }
+        //da sistemare
+        else if (col.gameObject.tag == "Wall-X" && s != State.WallmX)
+        {
+            Physics.gravity = new Vector3(-9.81f, 0, 0);
+            if(prec==State.WallmY)
+                transform.localEulerAngles = new Vector3(-90,0 ,-90);
+            else if (prec == State.WallZ)
+                transform.localEulerAngles = new Vector3(180, 0, -90);
+            else if(prec==State.WallmZ)
+                transform.localEulerAngles = new Vector3(0, 0, -90);
+            s = State.WallmX;
+            prec = State.WallmX;
+        }
+
+        else if (col.gameObject.tag == "WallY" && s != State.WallY )
+        {
+            Physics.gravity = new Vector3(0, 9.81f, 0);
+            if(prec==State.WallZ)
+                transform.localEulerAngles = new Vector3(-180, 0, 0);
+            else if (prec == State.WallmX)
+                transform.localEulerAngles = new Vector3(-180, 0, -90);
+            s = State.WallY;
+            prec = State.WallY;
+        }
+
+        
+    }
 
     void Update()
     {
