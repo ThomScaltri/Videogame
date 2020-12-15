@@ -42,7 +42,8 @@ public class SetGravity : MonoBehaviour
                 transform.localEulerAngles = new Vector3(0, 90, -90);
             else if(prec==State.WallX)
                 transform.localEulerAngles = new Vector3(180, 90, -90);
-            
+            else if(prec==State.WallY)
+                transform.localEulerAngles = new Vector3(90, 0, 180);
 
             s = State.WallZ;
             prec = State.WallZ;
@@ -75,7 +76,8 @@ public class SetGravity : MonoBehaviour
                 transform.localEulerAngles = new Vector3(0, 90, 90);
             else if(prec==State.WallX)
                 transform.localEulerAngles = new Vector3(180, 90, 90);
-
+            else if(prec==State.WallY)
+                transform.localEulerAngles = new Vector3(90, 90, 90);
 
             s = State.WallmZ;
             prec = State.WallmZ;
@@ -86,10 +88,12 @@ public class SetGravity : MonoBehaviour
             Physics.gravity = new Vector3(9.81f, 0, 0);
             if(prec==State.WallmY)
                 transform.localEulerAngles = new Vector3(-90, 0, 90);
-            else if(prec==State.WallZ)
+            else if (prec==State.WallZ)
                 transform.localEulerAngles = new Vector3(-180, 0, 90);
             else if(prec==State.WallmZ)
                 transform.localEulerAngles = new Vector3(0, 0, 90);
+            else if(prec==State.WallY)
+                transform.localEulerAngles = new Vector3(90, -90, 0);
 
             s = State.WallX;
             prec = State.WallX;
@@ -105,6 +109,9 @@ public class SetGravity : MonoBehaviour
                 transform.localEulerAngles = new Vector3(180, 0, -90);
             else if(prec==State.WallmZ)
                 transform.localEulerAngles = new Vector3(0, 0, -90);
+            else if(prec==State.WallY)
+                transform.localEulerAngles = new Vector3(90, 90, 0);
+
             s = State.WallmX;
             prec = State.WallmX;
         }
@@ -114,8 +121,13 @@ public class SetGravity : MonoBehaviour
             Physics.gravity = new Vector3(0, 9.81f, 0);
             if(prec==State.WallZ)
                 transform.localEulerAngles = new Vector3(-180, 0, 0);
-            else if (prec == State.WallmX)
-                transform.localEulerAngles = new Vector3(-180, 0, -90);
+            else if (prec == State.WallX)
+                transform.localEulerAngles = new Vector3(0, -90, 180);
+            else if(prec==State.WallmZ)
+                transform.localEulerAngles = new Vector3(180, 180, 0);
+            else if(prec==State.WallmX)
+                transform.localEulerAngles = new Vector3(0, 90, 180);
+
             s = State.WallY;
             prec = State.WallY;
         }
