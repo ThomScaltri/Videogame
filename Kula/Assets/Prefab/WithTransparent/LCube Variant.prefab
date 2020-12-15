@@ -7,10 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2998177255390294139}
     m_Modifications:
+    - target: {fileID: 1766938129365334965, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2998596355512866874, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4539012268615062318, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4987322467275382507, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
       propertyPath: m_Name
       value: LCubeTrasparent
       objectReference: {fileID: 0}
+    - target: {fileID: 5605672550060030654, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7038535584087943912, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -54,6 +70,14 @@ PrefabInstance:
     - target: {fileID: 7038535584087943912, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064247975574176438, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013883334565541194, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c2c618b67ffc43e59a9b9a03dd4a311, type: 3}
@@ -110,7 +134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4087651272546288927, guid: f79c7df02fb2b41e9922499a5f11d897, type: 3}
       propertyPath: m_Name
-      value: LCube
+      value: LCube Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f79c7df02fb2b41e9922499a5f11d897, type: 3}
