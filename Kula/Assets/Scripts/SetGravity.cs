@@ -21,11 +21,10 @@ public class SetGravity : MonoBehaviour
     private Quaternion rotation;
 
     enum State {
-        WallX, WallmX, WallZ,WallmZ,WallY,WallmY
-        
+        WallX, WallmX, WallZ, WallmZ, WallY, WallmY, WallCmY, WallCZ, WallCY, WallCmZ, WallCX, WallCmX
     }
 
-    State s=State.WallmY;
+    static State s = State.WallmY;
     State prec = State.WallmY;
 
     void OnTriggerEnter(Collider col)
@@ -131,8 +130,112 @@ public class SetGravity : MonoBehaviour
             s = State.WallY;
             prec = State.WallY;
         }
+        else if (col.gameObject.tag == "Wall-CY" && s != State.WallCmY)
+        {
+            Physics.gravity = new Vector3(0, -9.81f, 0);
+            if (prec == State.WallZ)
+                transform.localEulerAngles = new Vector3(0, 0, 0);
+            else if (prec == State.WallmZ)
+                transform.localEulerAngles = new Vector3(0, 180, 0);
+            else if (prec == State.WallX)
+                transform.localEulerAngles = new Vector3(0, 90, 0);
+            else if (prec == State.WallmX)
+                transform.localEulerAngles = new Vector3(0, -90, 0);
 
-        
+            s = State.WallmY;
+            prec = State.WallmY;
+        }
+
+        if (col.gameObject.tag == "WallCZ" && s != State.WallCZ)
+        {
+            Physics.gravity = new Vector3(0, 0, 9.81f);
+            if (prec == State.WallmY)
+                transform.localEulerAngles = new Vector3(90, 180, 0);
+            else if (prec == State.WallY)
+                transform.localEulerAngles = new Vector3(-90, 180, 180);
+            else if (prec == State.WallX)
+                transform.localEulerAngles = new Vector3(0, 90, -90);
+            else if (prec == State.WallmX)
+                transform.localEulerAngles = new Vector3(180, 90, -90);
+            
+            s = State.WallZ;
+            prec = State.WallZ;
+        }
+        else if (col.gameObject.tag == "Wall-CZ" && s != State.WallCmZ)
+        {
+            Physics.gravity = new Vector3(0, 0, -9.81f);
+            if (prec == State.WallmY)
+                transform.localEulerAngles = new Vector3(90, 90, 90);
+
+
+            else if (prec == State.WallmX)
+                transform.localEulerAngles = new Vector3(0, 90, 90);
+            else if (prec == State.WallX)
+                transform.localEulerAngles = new Vector3(180, 90, 90);
+            else if (prec == State.WallY)
+                transform.localEulerAngles = new Vector3(90, 90, 90);
+
+            s = State.WallmZ;
+            prec = State.WallmZ;
+        }
+        else if (col.gameObject.tag == "Wall-CX" && s != State.WallCmX)
+        {
+            Physics.gravity = new Vector3(-9.81f, 0, 0);
+            if (prec == State.WallmY)
+                transform.localEulerAngles = new Vector3(90, 0, -90);
+            else if (prec == State.WallZ)
+                transform.localEulerAngles = new Vector3(0, 0, -90);
+
+
+
+
+            else if (prec == State.WallmZ)
+                transform.localEulerAngles = new Vector3(0, 0, -90);
+            else if (prec == State.WallY)
+                transform.localEulerAngles = new Vector3(90, 90, 0);
+
+            s = State.WallmX;
+            prec = State.WallmX;
+        }
+        else if (col.gameObject.tag == "WallCX" && s != State.WallCX)
+        {
+            Physics.gravity = new Vector3(9.81f, 0, 0);
+            if (prec == State.WallmY)
+                transform.localEulerAngles = new Vector3(90, 0, 90);
+            else if (prec == State.WallZ)
+                transform.localEulerAngles = new Vector3(0, 0, 90);
+
+
+
+
+            else if (prec == State.WallmZ)
+                transform.localEulerAngles = new Vector3(0, 0, 90);
+            else if (prec == State.WallY)
+                transform.localEulerAngles = new Vector3(90, -90, 0);
+
+            s = State.WallX;
+            prec = State.WallX;
+
+        }
+        else if (col.gameObject.tag == "WallCY" && s != State.WallCY)
+        {
+            Physics.gravity = new Vector3(0, 9.81f, 0);
+            if (prec == State.WallZ)
+                transform.localEulerAngles = new Vector3(-180, 180, 0);
+
+
+
+            else if (prec == State.WallX)
+                transform.localEulerAngles = new Vector3(0, -90, 180);
+            else if (prec == State.WallmZ)
+                transform.localEulerAngles = new Vector3(180, 180, 0);
+            else if (prec == State.WallmX)
+                transform.localEulerAngles = new Vector3(0, 90, 180);
+
+            s = State.WallY;
+            prec = State.WallY;
+        }
+
     }
 
     void Update()

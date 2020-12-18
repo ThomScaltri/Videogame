@@ -11,6 +11,12 @@ TagManager:
   - Wall-Z
   - Wall-X
   - Wall-Y
+  - Wall-CY
+  - WallCZ
+  - WallCY
+  - Wall-CZ
+  - WallCX
+  - Wall-CX
   layers:
   - Default
   - TransparentFX
