@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7339830229045210373}
   m_Layer: 8
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,15 +156,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2410760150933800390, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}
       propertyPath: m_TagString
-      value: Wall-Y
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 5136131912164429147, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5136131912164429147, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 5562600188155258276, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562600188155258276, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}

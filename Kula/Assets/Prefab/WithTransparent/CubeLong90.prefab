@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 754933348742817227, guid: 9fa7334e2a44f4ccebd2cb32800c9ab8, type: 3}
       propertyPath: m_Name
-      value: CubeLong Variant
+      value: CubeLong90
+      objectReference: {fileID: 0}
+    - target: {fileID: 754933348742817227, guid: 9fa7334e2a44f4ccebd2cb32800c9ab8, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 3378102621849866696, guid: 9fa7334e2a44f4ccebd2cb32800c9ab8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,6 +58,14 @@ PrefabInstance:
     - target: {fileID: 3378102621849866696, guid: 9fa7334e2a44f4ccebd2cb32800c9ab8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367010558190093737, guid: 9fa7334e2a44f4ccebd2cb32800c9ab8, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802915950535191894, guid: 9fa7334e2a44f4ccebd2cb32800c9ab8, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fa7334e2a44f4ccebd2cb32800c9ab8, type: 3}

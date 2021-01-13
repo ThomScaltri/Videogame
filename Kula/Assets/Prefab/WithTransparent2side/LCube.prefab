@@ -61,15 +61,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4087651272546288927, guid: f79c7df02fb2b41e9922499a5f11d897, type: 3}
       propertyPath: m_TagString
-      value: Wall-Y
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6123962966709364093, guid: f79c7df02fb2b41e9922499a5f11d897, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6123962966709364093, guid: f79c7df02fb2b41e9922499a5f11d897, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6812196339611585922, guid: f79c7df02fb2b41e9922499a5f11d897, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812196339611585922, guid: f79c7df02fb2b41e9922499a5f11d897, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f79c7df02fb2b41e9922499a5f11d897, type: 3}

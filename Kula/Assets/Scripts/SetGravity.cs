@@ -9,6 +9,7 @@ public class SetGravity : MonoBehaviour
 
     public Transform orbit;
 
+    public Camera _camera;
 
     private bool isTouched = true;
     private float distance = 0;
@@ -27,22 +28,27 @@ public class SetGravity : MonoBehaviour
     static State s = State.WallmY;
     State prec = State.WallmY;
 
+    void Start()
+    {
+        _camera = GetComponent<Camera>();
+    }
+
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("Ciao sono dentro");
-
         //OK
         if (col.gameObject.tag == "WallZ" && s!=State.WallZ)
         {
             Physics.gravity = new Vector3(0, 0, 9.81f);
-            if(prec==State.WallmY)
-                transform.localEulerAngles=new Vector3(-90, 0, 0);
-            else if(prec==State.WallmX)
+            if (prec == State.WallmY)
+                transform.localEulerAngles = new Vector3(-90, 0, 0);
+            else if (prec == State.WallmX)
                 transform.localEulerAngles = new Vector3(0, 90, -90);
-            else if(prec==State.WallX)
+            else if (prec == State.WallX)
                 transform.localEulerAngles = new Vector3(180, 90, -90);
-            else if(prec==State.WallY)
+            else if (prec == State.WallY)
                 transform.localEulerAngles = new Vector3(90, 0, 180);
+            else if (prec == State.WallmZ)
+                transform.localEulerAngles = new Vector3(-90, 0, 0);
 
             s = State.WallZ;
             prec = State.WallZ;
@@ -54,11 +60,13 @@ public class SetGravity : MonoBehaviour
             if(prec==State.WallZ)
                 transform.localEulerAngles = new Vector3(0, 180, 0);
             else if(prec==State.WallmX)
-                transform.localEulerAngles = new Vector3(0, 90, 0);
+                transform.localEulerAngles = new Vector3(0, 90, 0);            
             else if(prec==State.WallX)
                 transform.localEulerAngles = new Vector3(0, -90, 0);
             else if(prec==State.WallmZ)
                 transform.localEulerAngles = new Vector3(0, 0, 0);
+            else if (prec == State.WallY)
+                transform.localEulerAngles = new Vector3(0, 90, 0);
 
             s = State.WallmY;
             prec = State.WallmY;
@@ -77,6 +85,8 @@ public class SetGravity : MonoBehaviour
                 transform.localEulerAngles = new Vector3(180, 90, 90);
             else if(prec==State.WallY)
                 transform.localEulerAngles = new Vector3(90, 90, 90);
+            else if (prec == State.WallZ)
+                transform.localEulerAngles = new Vector3(-90, 180, 0);
 
             s = State.WallmZ;
             prec = State.WallmZ;
@@ -93,6 +103,8 @@ public class SetGravity : MonoBehaviour
                 transform.localEulerAngles = new Vector3(0, 0, 90);
             else if(prec==State.WallY)
                 transform.localEulerAngles = new Vector3(90, -90, 0);
+            else if (prec == State.WallmX)
+                transform.localEulerAngles = new Vector3(-90, 90, 0);
 
             s = State.WallX;
             prec = State.WallX;
@@ -110,6 +122,8 @@ public class SetGravity : MonoBehaviour
                 transform.localEulerAngles = new Vector3(0, 0, -90);
             else if(prec==State.WallY)
                 transform.localEulerAngles = new Vector3(90, 90, 0);
+            else if (prec == State.WallX)
+                transform.localEulerAngles = new Vector3(270, 180, 90);
 
             s = State.WallmX;
             prec = State.WallmX;
@@ -126,6 +140,8 @@ public class SetGravity : MonoBehaviour
                 transform.localEulerAngles = new Vector3(180, 180, 0);
             else if(prec==State.WallmX)
                 transform.localEulerAngles = new Vector3(0, 90, 180);
+            else if(prec == State.WallmY)
+                transform.localEulerAngles = new Vector3(180, -90, 0);
 
             s = State.WallY;
             prec = State.WallY;
@@ -166,15 +182,13 @@ public class SetGravity : MonoBehaviour
             Physics.gravity = new Vector3(0, 0, -9.81f);
             if (prec == State.WallmY)
                 transform.localEulerAngles = new Vector3(90, 90, 90);
-
-
-            else if (prec == State.WallmX)
-                transform.localEulerAngles = new Vector3(0, 90, 90);
             else if (prec == State.WallX)
-                transform.localEulerAngles = new Vector3(180, 90, 90);
+                transform.localEulerAngles = new Vector3(0, 90, 90);
             else if (prec == State.WallY)
-                transform.localEulerAngles = new Vector3(90, 90, 90);
-
+                transform.localEulerAngles = new Vector3(-90, 90, 90);
+            else if (prec == State.WallmX)
+                transform.localEulerAngles = new Vector3(180, 90, 90);
+            
             s = State.WallmZ;
             prec = State.WallmZ;
         }
@@ -185,15 +199,11 @@ public class SetGravity : MonoBehaviour
                 transform.localEulerAngles = new Vector3(90, 0, -90);
             else if (prec == State.WallZ)
                 transform.localEulerAngles = new Vector3(0, 0, -90);
-
-
-
-
             else if (prec == State.WallmZ)
-                transform.localEulerAngles = new Vector3(0, 0, -90);
+                transform.localEulerAngles = new Vector3(180, 0, -90);
             else if (prec == State.WallY)
-                transform.localEulerAngles = new Vector3(90, 90, 0);
-
+                transform.localEulerAngles = new Vector3(270, 90, 180);
+            
             s = State.WallmX;
             prec = State.WallmX;
         }
@@ -204,14 +214,10 @@ public class SetGravity : MonoBehaviour
                 transform.localEulerAngles = new Vector3(90, 0, 90);
             else if (prec == State.WallZ)
                 transform.localEulerAngles = new Vector3(0, 0, 90);
-
-
-
-
-            else if (prec == State.WallmZ)
-                transform.localEulerAngles = new Vector3(0, 0, 90);
             else if (prec == State.WallY)
-                transform.localEulerAngles = new Vector3(90, -90, 0);
+                transform.localEulerAngles = new Vector3(270, -90, 180);
+            else if (prec == State.WallmZ)
+                transform.localEulerAngles = new Vector3(180, 0, 90);
 
             s = State.WallX;
             prec = State.WallX;
@@ -222,15 +228,12 @@ public class SetGravity : MonoBehaviour
             Physics.gravity = new Vector3(0, 9.81f, 0);
             if (prec == State.WallZ)
                 transform.localEulerAngles = new Vector3(-180, 180, 0);
-
-
-
             else if (prec == State.WallX)
-                transform.localEulerAngles = new Vector3(0, -90, 180);
-            else if (prec == State.WallmZ)
-                transform.localEulerAngles = new Vector3(180, 180, 0);
-            else if (prec == State.WallmX)
                 transform.localEulerAngles = new Vector3(0, 90, 180);
+            else if (prec == State.WallmZ)
+                transform.localEulerAngles = new Vector3(180, 0, 0);
+            else if (prec == State.WallmX)
+                transform.localEulerAngles = new Vector3(0, -90, 180);
 
             s = State.WallY;
             prec = State.WallY;
@@ -238,8 +241,22 @@ public class SetGravity : MonoBehaviour
 
     }
 
+
     void Update()
     {
-       
+        /*
+        Vector3 point = new Vector3(_camera.pixelWidth / 2,
+        _camera.pixelHeight / 2, 0);
+        Ray ray = _camera.ScreenPointToRay(point);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Wall"))
+            {
+                Color color = hit.collider.gameObject.GetComponent<Renderer>().material.color;
+                color.a = 0f;
+            }
+        }
+        */
     }
 }

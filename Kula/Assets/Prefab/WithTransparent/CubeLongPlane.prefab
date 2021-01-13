@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   orbit: {fileID: 0}
+  _camera: {fileID: 0}
   distanceChecker: {fileID: 0}
   WallDistance: 0.1
   Wall:
@@ -73,6 +74,18 @@ PrefabInstance:
     - target: {fileID: 2410760150933800390, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}
       propertyPath: m_Name
       value: CubeLongPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 2410760150933800390, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136131912164429147, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562600188155258276, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2cc7e9d69304cb8a09acef0d0b3cab, type: 3}

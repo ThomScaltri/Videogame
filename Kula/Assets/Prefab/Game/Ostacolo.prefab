@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3589425562397452202}
   m_Layer: 0
   m_Name: Ostacolo
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RespawnPoint: {fileID: 0}
+  ob: {fileID: 0}

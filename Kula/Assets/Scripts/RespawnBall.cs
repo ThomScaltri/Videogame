@@ -5,6 +5,7 @@ using UnityEngine;
 public class RespawnBall : MonoBehaviour
 {
     public Transform RespawnPoint;
+    public GameObject ob;
 
     //Detect collisions between the GameObjects with Colliders attached
      void OnTriggerEnter(Collider other)
@@ -15,6 +16,7 @@ public class RespawnBall : MonoBehaviour
              other.attachedRigidbody.velocity = Vector3.zero;
              other.transform.position = RespawnPoint.position;
              other.transform.rotation = Quaternion.identity;
+             ob.SetActive(true);
          }
      }
    

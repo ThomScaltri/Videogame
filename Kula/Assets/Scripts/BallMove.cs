@@ -11,6 +11,8 @@ public class BallMove : MonoBehaviour
     public float JumpHeight = 1f;
     public float SpeedRotate = 1f;
 
+    public float rotSpeed = 15.0f;
+
     private Rigidbody _body;
 
     public float GroundDistance = 0.2f;
@@ -81,6 +83,11 @@ public class BallMove : MonoBehaviour
         {
             _body.AddForce(transform.up * Mathf.Sqrt(JumpHeight * -2f * -9.81f), ForceMode.VelocityChange);
         }
+
+        /*
+        Quaternion direction = Quaternion.LookRotation(_translation);
+        transform.rotation = Quaternion.Lerp(transform.rotation, direction, rotSpeed * Time.deltaTime);
+        */
     }
 
     void FixedUpdate()
