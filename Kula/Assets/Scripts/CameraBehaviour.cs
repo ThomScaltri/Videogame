@@ -9,6 +9,9 @@ public class CameraBehaviour : MonoBehaviour
     public Transform thirdPersonPOV;
     public bool tempRotation = false;
 
+    private Camera _camera;
+    private GameObject ob;
+
     public Vector3 initialPositionOffset;
 
     void Awake()
@@ -22,11 +25,48 @@ public class CameraBehaviour : MonoBehaviour
     void Start()
     {
         UpdateView();
+        _camera = GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
+        Vector3 point = new Vector3(_camera.pixelWidth / 2,
+        _camera.pixelHeight / 2, 0);
+        Ray ray = _camera.ScreenPointToRay(point);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Wall"))
+            {
+                if(ob != null && hit.collider.gameObject.GetInstanceID() != ob.GetInstanceID())
+                {
+                    Color color1 = ob.GetComponent<Renderer>().material.color;
+                    color1.a = 1f;
+                    ob.GetComponent<Renderer>().material.color = color1;
+                }
+                Debug.Log(hit.collider.gameObject.name);
+                Color color = hit.collider.gameObject.GetComponent<Renderer>().material.color;
+                color.a = 0f;
+                hit.collider.gameObject.GetComponent<Renderer>().material.color = color;
+                ob = hit.collider.gameObject;
+                //hit.collider.gameObject.GetComponent<Renderer>().material.SetColor("_Color", color);
+            }
+            else
+            {
+                if(ob != null)
+                {
+                    Color color = ob.GetComponent<Renderer>().material.color;
+                    color.a = 1f;
+                    ob.GetComponent<Renderer>().material.color = color;
+                    ob = null;
+                }
+            }
+           
+        }
+        */
+
         if (Input.GetKeyDown(KeyCode.F))
         {
             ChangeView();

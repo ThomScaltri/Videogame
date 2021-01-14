@@ -16,6 +16,7 @@ public class RespawnBall : MonoBehaviour
              other.attachedRigidbody.velocity = Vector3.zero;
              other.transform.position = RespawnPoint.position;
              other.transform.rotation = Quaternion.identity;
+            if(ob != null)
              ob.SetActive(true);
          }
      }

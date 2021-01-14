@@ -9,8 +9,6 @@ public class SetGravity : MonoBehaviour
 
     public Transform orbit;
 
-    public Camera _camera;
-
     private bool isTouched = true;
     private float distance = 0;
     public Transform distanceChecker;
@@ -30,7 +28,6 @@ public class SetGravity : MonoBehaviour
 
     void Start()
     {
-        _camera = GetComponent<Camera>();
     }
 
     void OnTriggerEnter(Collider col)
@@ -66,7 +63,7 @@ public class SetGravity : MonoBehaviour
             else if(prec==State.WallmZ)
                 transform.localEulerAngles = new Vector3(0, 0, 0);
             else if (prec == State.WallY)
-                transform.localEulerAngles = new Vector3(0, 90, 0);
+                transform.localEulerAngles = new Vector3(0, 180, 0);
 
             s = State.WallmY;
             prec = State.WallmY;
@@ -141,7 +138,7 @@ public class SetGravity : MonoBehaviour
             else if(prec==State.WallmX)
                 transform.localEulerAngles = new Vector3(0, 90, 180);
             else if(prec == State.WallmY)
-                transform.localEulerAngles = new Vector3(180, -90, 0);
+                transform.localEulerAngles = new Vector3(0, 0, 180);
 
             s = State.WallY;
             prec = State.WallY;
@@ -244,19 +241,6 @@ public class SetGravity : MonoBehaviour
 
     void Update()
     {
-        /*
-        Vector3 point = new Vector3(_camera.pixelWidth / 2,
-        _camera.pixelHeight / 2, 0);
-        Ray ray = _camera.ScreenPointToRay(point);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.collider.CompareTag("Wall"))
-            {
-                Color color = hit.collider.gameObject.GetComponent<Renderer>().material.color;
-                color.a = 0f;
-            }
-        }
-        */
+       
     }
 }

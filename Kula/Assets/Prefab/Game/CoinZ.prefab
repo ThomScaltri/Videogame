@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 773745400499761509}
   - component: {fileID: 773745400499761506}
   - component: {fileID: 773745400499761510}
+  - component: {fileID: 341266476001168686}
   m_Layer: 0
-  m_Name: CoinX 1
+  m_Name: CoinZ
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,3 +110,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c41131a3d2265d49b46104b4ec27c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &341266476001168686
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773745400499761507}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af3a8756d71d32649885be9637910a41, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
